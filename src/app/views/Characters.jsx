@@ -3,7 +3,7 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div>
+    <div className="content">
       <Title title="Character" subtitle="Choose a character and let's begin" />
     </div>
   );

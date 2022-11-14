@@ -9,7 +9,7 @@ const Page = () => {
   const { data, isLoading } = useGetBookQuery(id);
 
   return (
-    <div>
+    <div className="content">
       <Loader loading={isLoading} />
       <Title title={data?.name || "Loading..."} back />
       <div className="card mb-2 width-50 center f-center">

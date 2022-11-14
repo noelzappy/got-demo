@@ -6,7 +6,7 @@ const Page = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="content">
       <div className="center">
         <h1>
           Welcome to <span>GOT!</span>

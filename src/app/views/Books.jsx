@@ -10,7 +10,7 @@ const Page = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="content">
       <Loader loading={books.isLoading || books.isFetchingNextPage} />
       <Title title="Books" subtitle="Choose a book and let's begin" />
       <div className="grid-container mb-2 ">
