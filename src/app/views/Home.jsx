@@ -1,7 +1,7 @@
 import useTheme from "app/hooks/useTheme";
 import React from "react";
 
-const Home = () => {
+const Page = () => {
   const { theme, setTheme } = useTheme();
   return (
     <div className="App">
@@ -12,14 +12,14 @@ const Home = () => {
         </p>
         <button
           onClick={() => {
-            setTheme({ theme: theme === "dark" ? "light" : "dark" });
+            setTheme();
           }}
         >
-          Learn React
+          Change Theme
         </button>
       </header>
     </div>
   );
 };
 
-export default Home;
+export default Page;

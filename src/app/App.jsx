@@ -1,11 +1,13 @@
 import { ThemeProvider } from "./context/ThemeContext";
-import Home from "./views/Home";
+import { RouterProvider } from "react-router-dom";
 import "app/theme/styles/main.css";
+
+import router from "./router";
 
 function App() {
   return (
     <ThemeProvider>
-      <Home />
+      <RouterProvider router={router} />
     </ThemeProvider>
   );
 }
