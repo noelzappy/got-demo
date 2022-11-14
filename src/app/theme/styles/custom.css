@@ -189,6 +189,21 @@
     cursor: pointer;
 }
 
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+
+}
+
+.grid-row--item {
+    background-color: var(--accent);
+    color: var(--primary);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
 
 
 /* media screen for tablets  */
@@ -235,4 +250,8 @@
 
 .mr {
     margin-right: 1rem;
+}
+
+.m {
+    margin: 1rem;
 }
