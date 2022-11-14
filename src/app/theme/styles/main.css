@@ -34,3 +34,8 @@ span {
     color: var(--danger);
 
 }
+
+hr {
+    border: none;
+    height: 1px
+}

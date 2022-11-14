@@ -1,7 +1,7 @@
 import { FiBook, FiUsers, FiPackage } from "react-icons/fi";
 
 export const Config = {
-  API_URL: "http://localhost:3000/v1",
+  API_URL: "https://www.anapioficeandfire.com/api",
 
   MENU_ITEMS: [
     {
