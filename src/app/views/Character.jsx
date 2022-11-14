@@ -25,9 +25,9 @@ const Page = () => {
             </span>
           </p>
           <div className="divider" />
-          <CharacterParent id={data?.mother} title="Mother" />
-          <CharacterParent id={data?.father} title="Father" />
-          <CharacterParent id={data?.spouse} title="Spouse" />
+          <CharacterParent id={data?.mother} title="Mother" left />
+          <CharacterParent id={data?.father} title="Father" left />
+          <CharacterParent id={data?.spouse} title="Spouse" left />
           <InfoText title="Culture" subtitle={data?.culture} />
           <InfoText title="Born" subtitle={data?.born} />
           <InfoText title="Died" subtitle={data?.died} />
