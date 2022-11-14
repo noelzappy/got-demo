@@ -20,7 +20,7 @@ const Page = () => {
           return (
             <div
               key={index}
-              className="card hover-cursor width-10"
+              className="card-c hover-cursor width-10"
               onClick={() => {
                 navigate(item.path);
               }}

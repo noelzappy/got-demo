@@ -6,7 +6,15 @@
     margin: 1rem;
 }
 
-.card:hover {
+.card-c {
+    background-color: var(--accent);
+    color: var(--primary);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.card-c:hover {
     background-color: var(--danger);
     color: var(--primary);
     border-radius: 10px;
@@ -62,6 +70,10 @@
     width: 100%;
 }
 
+.width-50 {
+    width: 50%;
+}
+
 .f-center {
     justify-content: center;
 }
@@ -82,7 +94,8 @@
 
 .spacer {
     flex: 1;
-    height: var(--gutter);
+    height: 16px;
+    margin-bottom: 16px;
 }
 
 
@@ -193,4 +206,24 @@
 
 .mb-2 {
     margin-bottom: 2rem;
+}
+
+.divider {
+    border: 1px solid var(--primary);
+    margin: 1rem 0;
+}
+
+.text {
+    color: var(--primary);
+    font-size: smaller;
+}
+
+
+.text-c {
+    color: var(--primary);
+    font-size: smaller;
+}
+
+.mr {
+    margin-right: 1rem;
 }

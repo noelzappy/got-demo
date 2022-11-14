@@ -3,7 +3,6 @@ import { api } from "../api";
 function transformResponse(res, meta) {
   const links = meta.response.headers.get("Link");
   const next = links?.split(",").find((link) => link.includes('rel="next"'));
-  console.log("NEXT", next);
 
   return {
     res,
@@ -22,8 +21,12 @@ export const booksApi = api.injectEndpoints({
         `/books?page=${page}&pageSize=${pageSize}`,
       transformResponse,
     }),
+
+    getBook: build.query({
+      query: (id) => `/books/${id}`,
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useGetBooksQuery } = booksApi;
+export const { useGetBookQuery } = booksApi;

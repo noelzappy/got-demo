@@ -1,6 +1,6 @@
 import { Layout } from "app/components";
 import { createBrowserRouter } from "react-router-dom";
-import { Home, NotFound, Houses, Characters, Books } from "app/views";
+import { Home, NotFound, Houses, Characters, Books, Book } from "app/views";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/books",
         element: <Books />,
+      },
+      {
+        path: "/books/:id",
+        element: <Book />,
       },
     ],
   },
