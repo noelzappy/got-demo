@@ -8,6 +8,7 @@ import {
   Books,
   Book,
   Character,
+  House,
 } from "app/views";
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/characters/:id",
         element: <Character />,
+      },
+      {
+        path: "/houses/:id",
+        element: <House />,
       },
     ],
   },

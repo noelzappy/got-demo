@@ -3,14 +3,16 @@ import { useGetCharacterQuery } from "app/services/modules/characters";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
-const CharacterParent = ({ id, title }) => {
+const CharacterParent = ({ id, title, left = false }) => {
   const newId = id?.split("/").pop() || "";
   const { data, isLoading } = useGetCharacterQuery(newId);
   const navigate = useNavigate();
 
+  const classes = left ? "row hover-cursor" : "row hover-cursor f-center";
+
   return (
     <div
-      className="row hover-cursor"
+      className={classes}
       onClick={() => {
         if (id) {
           navigate(`/characters/${newId}`);
