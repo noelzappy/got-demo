@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Page = () => {
   return (
     <div className="center">
       <div className="m width-50 center">
         <div className="card">
-          <h2>The Requested Page Not Found</h2>
+          <h1>404</h1>
           <div className="spacer " />
-          <button
-            className="btn btn-primary"
-            onClick={() => window.history.back()}
-          >
-            Go Back
-          </button>
+          <p>Page not found</p>
+          <div className="spacer " />
+
+          <Link to="/">
+            <button>Go Home</button>
+          </Link>
         </div>
       </div>
     </div>

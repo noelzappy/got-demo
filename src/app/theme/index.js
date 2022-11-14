@@ -8,6 +8,8 @@ const themes = {
     accentHover: "#1b262c",
     gutter: GUTTER,
     primaryHover: "#d3d3d3",
+    navBg: "#212529",
+    danger: "#f08080",
   },
   light: {
     primary: "#4a4e69",
@@ -16,6 +18,8 @@ const themes = {
     accentHover: "#f5f5f5",
     gutter: GUTTER,
     primaryHover: "#343a40",
+    navBg: "#f8f9fa",
+    danger: "#f08080",
   },
 };
 
