@@ -1,22 +1,11 @@
 import React from "react";
-import { FiArrowLeft } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
 
 const Title = ({ title, subtitle, back }) => {
   const classes = "center row f-center";
-  const navigate = useNavigate();
+
   return (
     <div>
       <div className={classes}>
-        <button
-          className="mr"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          <FiArrowLeft size={20} />
-        </button>
-
         <div>
           <h1>
             <span>{title}!</span>

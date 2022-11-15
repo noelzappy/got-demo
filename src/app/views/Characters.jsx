@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader, Title, Spinner } from "app/components";
+import { Loader,  Spinner } from "app/components";
 import useInfiniteQuery from "app/hooks/useInfiniteQuery";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -12,10 +12,7 @@ const Page = () => {
   return (
     <div className="content">
       <Loader loading={characters.isLoading || characters.isFetchingNextPage} />
-      <Title
-        title="Characters"
-        subtitle="Choose a character from the universe below to learn about"
-      />
+    
       <div className="grid-container mb-2 ">
         {characters.data?.map((character, index) => (
           <div

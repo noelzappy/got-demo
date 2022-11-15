@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader, Spinner, Title } from "app/components";
+import { Loader, Spinner,  } from "app/components";
 import useInfiniteQuery from "app/hooks/useInfiniteQuery";
 import { booksApi } from "app/services/modules/books";
 import { FiBookOpen } from "react-icons/fi";
@@ -13,7 +13,7 @@ const Page = () => {
     <div className="content">
       <Loader loading={books.isLoading || books.isFetchingNextPage} />
 
-      <Title title="Books" subtitle="Choose a book and let's begin" />
+     
       <div className="grid-container mb-2 ">
         {books.data?.map((book, index) => (
           <div

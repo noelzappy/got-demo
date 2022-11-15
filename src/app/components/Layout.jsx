@@ -2,7 +2,7 @@ import useTheme from "app/hooks/useTheme";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { FiSun, FiMoon, FiArrowLeft } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Page = () => {
@@ -11,21 +11,37 @@ const Page = () => {
 
   const { pathname } = useLocation();
 
-  const routeName = pathname?.split("/")[1] || "HOME";
+  const routeName = pathname?.split("/")[1] || "home";
 
   return (
     <div>
       <header>
         <nav className="navbar">
+          {routeName === "home" ? (
+            <div
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <AiFillHome className="logo" />
+            </div>
+          ) : (
+            <button
+              className="mr"
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              <FiArrowLeft size={20} />
+            </button>
+          )}
+
           <div
             onClick={() => {
               navigate("/");
             }}
+            className="hover-cursor"
           >
-            <AiFillHome className="logo" />
-          </div>
-
-          <div>
             <p className="title"> {routeName.toLocaleUpperCase()}</p>
           </div>
 
