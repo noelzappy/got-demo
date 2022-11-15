@@ -1,8 +1,10 @@
+import useTheme from "app/hooks/useTheme";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ErrorDialog({ open }) {
   const [visible, setVisible] = useState(false);
+  const { theme } = useTheme();
 
   const navigate = useNavigate();
 
