@@ -23,8 +23,8 @@ const Pagination = ({
     <div className="d-flex justify-content-center">
       {!isLoading && !isFetchingNextPage ? (
         <ReactPaginate
-          previousLabel="Previous"
-          nextLabel="Next"
+          previousLabel="<"
+          nextLabel=">"
           pageClassName="page-item"
           pageLinkClassName="page-link"
           previousClassName="page-item"
