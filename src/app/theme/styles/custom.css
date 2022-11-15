@@ -207,7 +207,7 @@
 
 
 /* media screen for tablets  */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .row {
         flex-direction: column;
     }
@@ -215,18 +215,13 @@
     .width-10 {
         width: 90%;
     }
-}
 
-/* media screen for mobile  */
-@media screen and (max-width: 480px) {
-    .row {
-        flex-direction: column;
-    }
-
-    .width-10 {
+    .width-50 {
         width: 90%;
     }
 }
+
+
 
 .mb-2 {
     margin-bottom: 2rem;
