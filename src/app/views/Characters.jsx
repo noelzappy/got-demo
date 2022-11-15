@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader,  Spinner } from "app/components";
+import { Loader, Pagination, Spinner } from "app/components";
 import useInfiniteQuery from "app/hooks/useInfiniteQuery";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <div className="content">
       <Loader loading={characters.isLoading || characters.isFetchingNextPage} />
-    
+
       <div className="grid-container mb-2 ">
         {characters.data?.map((character, index) => (
           <div
@@ -41,15 +41,8 @@ const Page = () => {
         loading={characters.isFetchingNextPage || characters.isLoading}
       />
 
-      {characters.hasNextPage &&
-        !characters.isLoading &&
-        !characters.isFetchingNextPage && (
-          <div className="center">
-            <button onClick={() => characters.fetchNextPage()}>
-              Load More
-            </button>
-          </div>
-        )}
+      <Pagination {...characters} />
+
       <div className="spacer" />
     </div>
   );

@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from "react";
 
 function useInfiniteQuery(endpoint, params = { page: 1 }) {
   const nextPage = useRef(null);
+  const lastPage = useRef(null);
   const [pages, setPages] = useState(undefined);
   const [trigger, result] = endpoint.useLazyQuery();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     nextPage.current = params.page;
+    lastPage.current = params.page;
     trigger(params);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -18,13 +20,16 @@ function useInfiniteQuery(endpoint, params = { page: 1 }) {
     setLoading(false);
   };
 
-  const getNextPageParam = (data) =>
-    data && data.meta && data.meta.nextPage ? nextPage.current + 1 : undefined;
+  const getPageParams = (data) => ({
+    nextPage: data?.meta?.nextPage || undefined,
+    lastPage: data?.meta?.lastPage || undefined,
+  });
 
   useEffect(() => {
     if (!result.isSuccess) return;
-    nextPage.current = getNextPageParam(result.data);
-    setPages([...(pages ?? []), ...result.data?.res]);
+    nextPage.current = getPageParams(result.data).nextPage;
+    lastPage.current = getPageParams(result.data).lastPage;
+    setPages([...result.data?.res]);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result.data]);
@@ -44,6 +49,18 @@ function useInfiniteQuery(endpoint, params = { page: 1 }) {
     },
     trigger: load,
     isFetchingNextPage: result.isFetching && pages !== undefined,
+    nextPage: nextPage.current !== undefined ? nextPage.current : 1,
+    lastPage: lastPage.current !== undefined ? lastPage.current : 1,
+    hasPreviousPage: nextPage.current !== undefined && nextPage.current - 1 > 1,
+    fetchPreviousPage() {
+      if (lastPage.current !== undefined) {
+        trigger({ ...params, page: lastPage.current });
+      }
+    },
+    currentPage: nextPage.current !== undefined ? nextPage.current - 1 : 1,
+    fetchPage(page) {
+      trigger({ ...params, page });
+    },
   };
 }
 

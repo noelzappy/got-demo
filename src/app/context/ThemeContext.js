@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 
 /* Creating a context object with a default value of light and a function that does nothing. */
 const ThemeContext = createContext({
-  theme: "light",
+  theme: "dark",
   setTheme: () => {},
 });
 

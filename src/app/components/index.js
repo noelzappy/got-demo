@@ -7,3 +7,4 @@ export { default as Spinner } from "./Spinner";
 export { default as ErrorDialog } from "./ErrorDialog";
 export { default as HouseItem } from "./HouseItem";
 export { default as BookItem } from "./BookItem";
+export { default as Pagination } from "./Pagination";

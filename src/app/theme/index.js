@@ -9,7 +9,7 @@ const themes = {
     gutter: GUTTER,
     primaryHover: "#d3d3d3",
     navBg: "#212529",
-    danger: "#f08080",
+    danger: "#0d6efd",
   },
   light: {
     primary: "#4a4e69",
@@ -19,7 +19,7 @@ const themes = {
     gutter: GUTTER,
     primaryHover: "#343a40",
     navBg: "#f8f9fa",
-    danger: "#f08080",
+    danger: "#0d6efd",
   },
 };
 
