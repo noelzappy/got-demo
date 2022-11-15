@@ -1,6 +1,5 @@
 import React from "react";
 import { useGetBookQuery } from "app/services/modules/books";
-import { FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const BookItem = ({ id, title, left = false }) => {
@@ -8,7 +7,9 @@ const BookItem = ({ id, title, left = false }) => {
   const { data, isLoading } = useGetBookQuery(newId);
   const navigate = useNavigate();
 
-  const classes = left ? "row hover-cursor" : "row hover-cursor f-center";
+  const classes = left
+    ? "row hover-cursor item"
+    : "row hover-cursor f-center item";
 
   return (
     <div
@@ -24,7 +25,6 @@ const BookItem = ({ id, title, left = false }) => {
         <div className="text">Loading...</div>
       ) : (
         <div className="row">
-          <FiUser size={20} />
           <div>{data?.name || "Unknown"}</div>
         </div>
       )}

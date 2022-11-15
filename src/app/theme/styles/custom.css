@@ -373,3 +373,13 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--primary);
+    margin: 1rem;
+    border-radius: 10px;
+}
