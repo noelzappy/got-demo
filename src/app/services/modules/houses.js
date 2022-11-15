@@ -4,7 +4,7 @@ import { api } from "../api";
 export const housesApi = api.injectEndpoints({
   endpoints: (build) => ({
     getHouses: build.query({
-      query: ({ page = 1, pageSize = 10 }) =>
+      query: ({ page = 1, pageSize = 20 }) =>
         `/houses?page=${page}&pageSize=${pageSize}`,
       transformResponse,
     }),

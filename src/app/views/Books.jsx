@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader, Spinner,  } from "app/components";
+import { Loader, Pagination } from "app/components";
 import useInfiniteQuery from "app/hooks/useInfiniteQuery";
 import { booksApi } from "app/services/modules/books";
 import { FiBookOpen } from "react-icons/fi";
@@ -13,7 +13,6 @@ const Page = () => {
     <div className="content">
       <Loader loading={books.isLoading || books.isFetchingNextPage} />
 
-     
       <div className="grid-container mb-2 ">
         {books.data?.map((book, index) => (
           <div
@@ -40,13 +39,7 @@ const Page = () => {
           </div>
         ))}
       </div>
-
-      {books.hasNextPage && !books.isLoading && !books.isFetchingNextPage && (
-        <div className="center">
-          <button onClick={() => books.fetchNextPage()}>Load More</button>
-        </div>
-      )}
-      <Spinner loading={books.isFetchingNextPage || books.isLoading} />
+      <Pagination {...books} />
       <div className="spacer" />
     </div>
   );

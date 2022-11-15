@@ -1,7 +1,6 @@
 import useTheme from "app/hooks/useTheme";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { AiFillHome } from "react-icons/ai";
 import { FiSun, FiMoon, FiArrowLeft } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -23,7 +22,7 @@ const Page = () => {
                 navigate("/");
               }}
             >
-              <AiFillHome className="logo" />
+              <img src="/assets/logo.png" className="logo" alt="logo" />
             </div>
           ) : (
             <button

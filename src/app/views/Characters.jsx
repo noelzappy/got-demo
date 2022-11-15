@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader, Pagination, Spinner } from "app/components";
+import { Loader, Pagination } from "app/components";
 import useInfiniteQuery from "app/hooks/useInfiniteQuery";
 import { FiUser } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -37,9 +37,6 @@ const Page = () => {
           </div>
         ))}
       </div>
-      <Spinner
-        loading={characters.isFetchingNextPage || characters.isLoading}
-      />
 
       <Pagination {...characters} />
 

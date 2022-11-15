@@ -1,5 +1,5 @@
 import React from "react";
-import { InfoText, Loader, Spinner } from "app/components";
+import { InfoText, Loader, Pagination } from "app/components";
 import useInfiniteQuery from "app/hooks/useInfiniteQuery";
 import { FiPackage } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -33,13 +33,7 @@ const Page = () => {
           </div>
         ))}
       </div>
-      <Spinner loading={houses.isFetchingNextPage || houses.isLoading} />
-
-      {houses.hasNextPage && !houses.isLoading && !houses.isFetchingNextPage && (
-        <div className="center">
-          <button onClick={() => houses.fetchNextPage()}>Load More</button>
-        </div>
-      )}
+      <Pagination {...houses} />
       <div className="spacer" />
     </div>
   );

@@ -2,7 +2,8 @@
 
 import React from "react";
 import ReactPaginate from "react-paginate";
-import { Spinner } from ".";
+// import { useSearchParams } from "react-router-dom";
+import Spinner from "./Spinner";
 
 const Pagination = ({
   currentPage = 1,
@@ -11,8 +12,11 @@ const Pagination = ({
   isLoading,
   isFetchingNextPage,
 }) => {
+  // const [searchParams, setSearchParams] = useSearchParams();
+
   const handlePageChange = (e) => {
     fetchPage(e.selected + 1);
+    // setSearchParams({ page: e.selected + 1 });
   };
 
   return (
@@ -36,7 +40,7 @@ const Pagination = ({
           onPageChange={handlePageChange}
           containerClassName="pagination"
           activeClassName="active"
-          forcePage={currentPage - 1}
+          forcePage={searchParams || currentPage - 1}
           renderOnZeroPageCount={null}
         />
       ) : (

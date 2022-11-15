@@ -4,7 +4,7 @@ import { api } from "../api";
 export const charactersApi = api.injectEndpoints({
   endpoints: (build) => ({
     getCharacters: build.query({
-      query: ({ page = 1, pageSize = 10 }) =>
+      query: ({ page = 1, pageSize = 20 }) =>
         `/characters?page=${page}&pageSize=${pageSize}`,
       transformResponse,
     }),
