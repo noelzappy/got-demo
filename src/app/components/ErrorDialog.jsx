@@ -13,9 +13,9 @@ export default function ErrorDialog({ open }) {
     return (
       <div>
         <div id="myModal" className="modal width-50">
-          <div class="modal-content">
+          <div className="modal-content">
             <span
-              class="close"
+              className="close"
               onClick={() => {
                 setVisible(false);
                 navigate(-1);

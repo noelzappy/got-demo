@@ -1,13 +1,17 @@
 import useTheme from "app/hooks/useTheme";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { AiFillAppstore } from "react-icons/ai";
+import { AiFillHome } from "react-icons/ai";
 import { FiSun, FiMoon } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Page = () => {
   const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
+
+  const { pathname } = useLocation();
+
+  const routeName = pathname?.split("/")[1] || "HOME";
 
   return (
     <div>
@@ -18,7 +22,11 @@ const Page = () => {
               navigate("/");
             }}
           >
-            <AiFillAppstore className="logo" />
+            <AiFillHome className="logo" />
+          </div>
+
+          <div>
+            <p className="title"> {routeName.toLocaleUpperCase()}</p>
           </div>
 
           <div>

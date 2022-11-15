@@ -2,10 +2,12 @@ import React from "react";
 import {
   CharacterParent,
   ErrorDialog,
+  HouseItem,
   InfoText,
   Loader,
   Spinner,
   Title,
+  BookItem,
 } from "app/components";
 import { useParams } from "react-router-dom";
 import { useGetCharacterQuery } from "app/services/modules/characters";
@@ -44,14 +46,26 @@ const Page = () => {
 
         <div className="card grid-row-item">
           <div className="spacer" />
-          <h3>Aliases</h3>
+          <p> Allegiances</p>
+          {data?.allegiances.map((house) => (
+            <HouseItem id={house} key={house} title="Allegiance" left />
+          ))}
 
-          <p>{data?.aliases.map((alias) => alias).join(", ")}</p>
           <div className="divider" />
-
-          <p className="text-c">
-            Country: <span className="text">{data?.country}</span>
-          </p>
+          <p> Books</p>
+          {data?.books.map((book) => (
+            <BookItem id={book} key={book} title="Book" left />
+          ))}
+          <div className="divider" />
+          <p> TV Series</p>
+          {data?.tvSeries.map((series) => (
+            <li key={series}>{series}</li>
+          ))}
+          <div className="divider" />
+          <p> Played By</p>
+          {data?.playedBy.map((actor) => (
+            <li key={actor}>{actor}</li>
+          ))}
         </div>
       </div>
     </div>
