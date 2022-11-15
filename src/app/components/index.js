@@ -3,3 +3,7 @@ export { default as Title } from "./Title";
 export { default as Loader } from "./Loader";
 export { default as CharacterParent } from "./CharacterParent";
 export { default as InfoText } from "./InfoText";
+export { default as Spinner } from "./Spinner";
+export { default as ErrorDialog } from "./ErrorDialog";
+export { default as HouseItem } from "./HouseItem";
+export { default as BookItem } from "./BookItem";

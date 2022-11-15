@@ -1,16 +1,25 @@
 import React from "react";
-import { CharacterParent, InfoText, Loader, Title } from "app/components";
+import {
+  CharacterParent,
+  ErrorDialog,
+  InfoText,
+  Loader,
+  Spinner,
+  Title,
+} from "app/components";
 import { useParams } from "react-router-dom";
 import { useGetCharacterQuery } from "app/services/modules/characters";
 
 const Page = () => {
   const { id } = useParams();
-  const { data, isLoading } = useGetCharacterQuery(id);
+  const { data, isLoading, isError } = useGetCharacterQuery(id);
 
   return (
     <div className="content">
       <Loader loading={isLoading} />
       <Title title={isLoading ? "Loading..." : data.name || "Unknown"} back />
+      <Spinner loading={isLoading} />
+      <ErrorDialog open={isError} />
 
       <div className="grid-row">
         <div className="card grid-row-item">

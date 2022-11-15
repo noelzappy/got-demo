@@ -1,17 +1,19 @@
 import React from "react";
-import { Loader, Title } from "app/components";
+import { ErrorDialog, Loader, Spinner, Title } from "app/components";
 import { useGetBookQuery } from "app/services/modules/books";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 
 const Page = () => {
   const { id } = useParams();
-  const { data, isLoading } = useGetBookQuery(id);
+  const { data, isLoading, isError } = useGetBookQuery(id);
 
   return (
     <div className="content">
       <Loader loading={isLoading} />
-      <Title title={data?.name || "Loading..."} back />
+      <Spinner loading={isLoading} />
+      <ErrorDialog open={isError} />
+      <Title title={data?.name || ""} back />
       <div className="card mb-2 width-50 center f-center">
         <div className="spacer" />
         <p className="text-c">

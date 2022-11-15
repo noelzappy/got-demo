@@ -1,15 +1,24 @@
 import React from "react";
-import { InfoText, Loader, Title, CharacterParent } from "app/components";
+import {
+  InfoText,
+  Loader,
+  Title,
+  CharacterParent,
+  Spinner,
+  ErrorDialog,
+} from "app/components";
 import { useParams } from "react-router-dom";
 import { useGetHouseQuery } from "app/services/modules/houses";
 
 const Page = () => {
   const { id } = useParams();
-  const { data, isLoading } = useGetHouseQuery(id);
+  const { data, isLoading, isError } = useGetHouseQuery(id);
 
   return (
     <div className="content">
       <Loader loading={isLoading} />
+      <Spinner loading={isLoading} />
+      <ErrorDialog open={isError} />
       <Title title={data?.name || "Loading..."} back />
       <div className="card mb-2 width-50 center f-center">
         <div className="spacer" />
