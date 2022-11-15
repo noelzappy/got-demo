@@ -40,7 +40,7 @@ const Pagination = ({
           onPageChange={handlePageChange}
           containerClassName="pagination"
           activeClassName="active"
-          forcePage={searchParams || currentPage - 1}
+          forcePage={currentPage - 1}
           renderOnZeroPageCount={null}
         />
       ) : (

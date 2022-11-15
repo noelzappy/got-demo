@@ -11,36 +11,40 @@ const Page = () => {
 
   return (
     <div className="content">
-      <Loader loading={characters.isLoading || characters.isFetchingNextPage} />
+      <div className="content-inner">
+        <Loader
+          loading={characters.isLoading || characters.isFetchingNextPage}
+        />
 
-      <div className="grid-container mb-2 ">
-        {characters.data?.map((character, index) => (
-          <div
-            className="grid-item"
-            key={index}
-            onClick={() => {
-              const id = character.url.split("/").pop();
-              navigate(`/characters/${id}`);
-            }}
-          >
-            <FiUser size={50} />
-            <h3>{character.name || "Unknown"}</h3>
-            <p>{character.aliases.map((alias) => alias).join(", ")}</p>
-            <div className="divider" />
-            <p className="text-c">
-              Gender: <span className="text">{character.gender}</span>
-            </p>
+        <div className="grid-container mb-2 ">
+          {characters.data?.map((character, index) => (
+            <div
+              className="grid-item"
+              key={index}
+              onClick={() => {
+                const id = character.url.split("/").pop();
+                navigate(`/characters/${id}`);
+              }}
+            >
+              <FiUser size={50} />
+              <h3>{character.name || "Unknown"}</h3>
+              <p>{character.aliases.map((alias) => alias).join(", ")}</p>
+              <div className="divider" />
+              <p className="text-c">
+                Gender: <span className="text">{character.gender}</span>
+              </p>
 
-            <p className="text-c">
-              Books: <span className="text">{character.books.length}</span>
-            </p>
-          </div>
-        ))}
+              <p className="text-c">
+                Books: <span className="text">{character.books.length}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <Pagination {...characters} />
+
+        <div className="spacer" />
       </div>
-
-      <Pagination {...characters} />
-
-      <div className="spacer" />
     </div>
   );
 };

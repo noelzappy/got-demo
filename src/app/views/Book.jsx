@@ -10,6 +10,8 @@ const Page = () => {
 
   return (
     <div className="content">
+      <div className="content-inner">
+     
       <Loader loading={isLoading} />
       <Spinner loading={isLoading} />
       <ErrorDialog open={isError} />
@@ -60,7 +62,8 @@ const Page = () => {
         </p>
 
         <div className="divider" />
-      </div>
+        </div>
+        </div>
     </div>
   );
 };

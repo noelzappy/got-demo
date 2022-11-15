@@ -11,30 +11,32 @@ const Page = () => {
 
   return (
     <div className="content">
-      <Loader loading={houses.isLoading || houses.isFetchingNextPage} />
+      <div className="content-inner">
+        <Loader loading={houses.isLoading || houses.isFetchingNextPage} />
 
-      <div className="grid-container mb-2 ">
-        {houses.data?.map((house, index) => (
-          <div
-            className="grid-item"
-            key={index}
-            onClick={() => {
-              const id = house.url.split("/").pop();
-              navigate(`/houses/${id}`);
-            }}
-          >
-            <FiPackage size={50} />
-            <h3>{house.name || "Unknown"}</h3>
+        <div className="grid-container mb-2 ">
+          {houses.data?.map((house, index) => (
+            <div
+              className="grid-item"
+              key={index}
+              onClick={() => {
+                const id = house.url.split("/").pop();
+                navigate(`/houses/${id}`);
+              }}
+            >
+              <FiPackage size={50} />
+              <h3>{house.name || "Unknown"}</h3>
 
-            <div className="divider" />
+              <div className="divider" />
 
-            <InfoText title="Coat of Arms" subtitle={house.coatOfArms} />
-            <InfoText title="Region" subtitle={house.region} />
-          </div>
-        ))}
+              <InfoText title="Coat of Arms" subtitle={house.coatOfArms} />
+              <InfoText title="Region" subtitle={house.region} />
+            </div>
+          ))}
+        </div>
+        <Pagination {...houses} />
+        <div className="spacer" />
       </div>
-      <Pagination {...houses} />
-      <div className="spacer" />
     </div>
   );
 };

@@ -11,36 +11,38 @@ const Page = () => {
 
   return (
     <div className="content">
-      <Loader loading={books.isLoading || books.isFetchingNextPage} />
+      <div className="content-inner">
+        <Loader loading={books.isLoading || books.isFetchingNextPage} />
 
-      <div className="grid-container mb-2 ">
-        {books.data?.map((book, index) => (
-          <div
-            className="grid-item"
-            key={index}
-            onClick={() => {
-              const id = book.url.split("/").pop();
-              navigate(`/books/${id}`);
-            }}
-          >
-            <FiBookOpen size={50} />
-            <h3>{book.name}</h3>
-            <div className="divider" />
-            <p className="text-c">
-              Author(s):{" "}
-              <span className="text">
-                {book.authors.map((author) => author).join(", ")}
-              </span>
-            </p>
+        <div className="grid-container mb-2 ">
+          {books.data?.map((book, index) => (
+            <div
+              className="grid-item"
+              key={index}
+              onClick={() => {
+                const id = book.url.split("/").pop();
+                navigate(`/books/${id}`);
+              }}
+            >
+              <FiBookOpen size={50} />
+              <h3>{book.name}</h3>
+              <div className="divider" />
+              <p className="text-c">
+                Author(s):{" "}
+                <span className="text">
+                  {book.authors.map((author) => author).join(", ")}
+                </span>
+              </p>
 
-            <p className="text-c">
-              Country: <span className="text">{book.country}</span>
-            </p>
-          </div>
-        ))}
+              <p className="text-c">
+                Country: <span className="text">{book.country}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+        <Pagination {...books} />
+        <div className="spacer" />
       </div>
-      <Pagination {...books} />
-      <div className="spacer" />
     </div>
   );
 };
