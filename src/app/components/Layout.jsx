@@ -25,23 +25,23 @@ const Page = () => {
               <img src="/assets/logo.png" className="logo" alt="logo" />
             </div>
           ) : (
-            <button
-              className="mr"
+            <FiArrowLeft
+              size={30}
               onClick={() => {
                 navigate(-1);
               }}
-            >
-              <FiArrowLeft size={20} />
-            </button>
+            />
           )}
 
           <div
             onClick={() => {
               navigate("/");
             }}
-            className="hover-cursor"
+            className="hover-cursor center f-center "
           >
-            <p className="title"> {routeName.toLocaleUpperCase()}</p>
+            {routeName !== "home" && (
+              <p className="title"> {routeName.toLocaleUpperCase()}</p>
+            )}
           </div>
 
           <div>
