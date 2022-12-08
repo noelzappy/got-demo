@@ -4,13 +4,23 @@ import { api } from "../api";
 export const housesApi = api.injectEndpoints({
   endpoints: (build) => ({
     getHouses: build.query({
-      query: ({ page = 1, pageSize = 20 }) =>
-        `/houses?page=${page}&pageSize=${pageSize}`,
+      query: ({ page = 1, pageSize = 20 }) => ({
+        url: "/houses",
+        params: {
+          page,
+          pageSize,
+        },
+      }),
       transformResponse,
     }),
 
     getHouse: build.query({
-      query: (id) => `/houses/${id}`,
+      query: (id) => ({
+        url: "/houses",
+        params: {
+          id,
+        },
+      }),
     }),
   }),
   overrideExisting: false,
