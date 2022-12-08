@@ -1,8 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
-import router from "app/router";
 import { BrowserRouter } from "react-router-dom";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import { api } from "app/services/api";
