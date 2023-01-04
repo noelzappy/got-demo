@@ -16,10 +16,7 @@ export const charactersApi = api.injectEndpoints({
 
     getCharacter: build.query({
       query: (id) => ({
-        url: "/characters",
-        params: {
-          id,
-        },
+        url: `/characters/${id}`,
       }),
     }),
   }),

@@ -29,7 +29,7 @@ const Page = () => {
             <div className="spacer" />
             <h3>Aliases</h3>
 
-            <p>{data?.aliases.map((alias) => alias).join(", ")}</p>
+            <p>{data?.aliases?.map((alias) => alias).join(", ")}</p>
             <p className="text-c">
               Titles:{" "}
               <span className="text">
@@ -48,23 +48,23 @@ const Page = () => {
           <div className="card grid-row-item">
             <div className="spacer" />
             <p> Allegiances</p>
-            {data?.allegiances.map((house) => (
+            {data?.allegiances?.map((house) => (
               <HouseItem id={house} key={house} title="Allegiance" left />
             ))}
 
             <div className="divider" />
             <p> Books</p>
-            {data?.books.map((book) => (
+            {data?.books?.map((book) => (
               <BookItem id={book} key={book} title="Book" left />
             ))}
             <div className="divider" />
             <p> TV Series</p>
-            {data?.tvSeries.map((series) => (
+            {data?.tvSeries?.map((series) => (
               <li key={series}>{series}</li>
             ))}
             <div className="divider" />
             <p> Played By</p>
-            {data?.playedBy.map((actor) => (
+            {data?.playedBy?.map((actor) => (
               <li key={actor}>{actor}</li>
             ))}
           </div>

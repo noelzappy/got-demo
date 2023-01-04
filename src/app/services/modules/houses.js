@@ -16,10 +16,7 @@ export const housesApi = api.injectEndpoints({
 
     getHouse: build.query({
       query: (id) => ({
-        url: "/houses",
-        params: {
-          id,
-        },
+        url: `/houses/${id}`,
       }),
     }),
   }),

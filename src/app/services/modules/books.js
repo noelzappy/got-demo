@@ -17,10 +17,7 @@ export const booksApi = api.injectEndpoints({
 
     getBook: build.query({
       query: (id) => ({
-        url: "/books",
-        params: {
-          id,
-        },
+        url: `/books/${id}`,
       }),
     }),
   }),

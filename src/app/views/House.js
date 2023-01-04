@@ -28,7 +28,7 @@ const Page = () => {
           <InfoText title="Coat of Arms" subtitle={data?.coatOfArms} />
           <InfoText title="Words" subtitle={data?.words} />
           <InfoText title="Titles" subtitle={data?.titles.join(", ")} />
-          <InfoText title="Seats" subtitle={data?.seats.join(", ")} />
+          <InfoText title="Seats" subtitle={data?.seats?.join(", ")} />
           <InfoText title="Founded" subtitle={data?.founded} />
           <InfoText title="Died Out" subtitle={data?.diedOut} />
           <CharacterParent id={data?.currentLord} title="Current Lord" />

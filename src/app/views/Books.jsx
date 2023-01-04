@@ -15,7 +15,7 @@ const Page = () => {
         <Loader loading={books.isLoading || books.isFetchingNextPage} />
 
         <div className="grid-container mb-2 ">
-          {books.data?.map((book, index) => (
+          {books?.data?.map((book, index) => (
             <div
               className="grid-item"
               key={index}
@@ -30,7 +30,7 @@ const Page = () => {
               <p className="text-c">
                 Author(s):{" "}
                 <span className="text">
-                  {book.authors.map((author) => author).join(", ")}
+                  {book.authors?.map((author) => author).join(", ")}
                 </span>
               </p>
 
